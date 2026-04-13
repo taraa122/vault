@@ -28,7 +28,7 @@ I found that standard scraping doesn't really work on QuickSight because it uses
 
 The script handles the standard AWS auth flow. I've left the credentials in the script for now to keep things simple for the review.
 
-QuickSight has a habit of throwing "What's New" or "Welcome" popups that block the screen. I added a helper that swats those away using raw JS clicks so the script doesn't hang.
+QuickSight throws popups that block the screen. I added a helper that swats those away using raw JS clicks so the script doesn't hang.
 
 Since normal scroll commands didn't trigger the data load, I'm injecting a JS snippet that finds every scrollable container and forces them down. This tricks React into fetching the next batch of rows.
 
@@ -36,7 +36,6 @@ It grabs text directly from the DOM, looks for affiliate codes (like `AFF001`), 
 
 ## If things go wrong
 
-If it's timing out, you might need to bump the timeout variables at the top of `scraper.py`.
 
 In case it's not grabbing data, I set it up to take a screenshot (`failed_extraction.png`) if it can't find the table. Usually, this happens if a new popup appeared that I didn't account for.
 
