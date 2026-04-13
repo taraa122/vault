@@ -3,11 +3,11 @@
 You'll need Python 3.10 or higher.
 
 ```bash
-# Get the code
-git clone
-cd vault-network-scraper
 
-# Get dependencies
+git clone https://github.com/taraa122/vault.git
+cd vault
+
+
 pip install -r requirements.txt
 playwright install chromium
 ```
